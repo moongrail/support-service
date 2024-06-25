@@ -14,4 +14,9 @@ public class Publisher<T>  {
     public void publish(T object){
         inMemoryBroker.publish(objectMapper.writeValueAsString(object));
     }
+
+    @SneakyThrows
+    public String take(T object){
+        return inMemoryBroker.take();
+    }
 }

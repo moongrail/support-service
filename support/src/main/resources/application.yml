@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: support
+server:
+  port: 80
+debug: true
+inmemory-broker:
+  enabled: true

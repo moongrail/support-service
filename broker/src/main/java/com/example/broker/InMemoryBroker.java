@@ -1,10 +1,12 @@
 package com.example.broker;
 
 import lombok.SneakyThrows;
+import org.springframework.stereotype.Component;
 
 import java.util.concurrent.BlockingDeque;
 import java.util.concurrent.LinkedBlockingDeque;
 
+@Component
 public class InMemoryBroker {
     private final BlockingDeque<String> messageQueue = new LinkedBlockingDeque<>();
 
@@ -13,7 +15,7 @@ public class InMemoryBroker {
     }
 
     @SneakyThrows
-    public String subscribe() {
+    public String take() {
         return messageQueue.take();
     }
 }

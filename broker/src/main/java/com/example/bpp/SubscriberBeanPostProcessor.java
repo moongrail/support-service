@@ -37,7 +37,7 @@ public class SubscriberBeanPostProcessor implements BeanPostProcessor {
         private void init() {
             METHOD_TO_BEAN.entrySet().forEach(e -> executorService.submit(() -> {
                         while (true) {
-                            final var message = inMemoryBroker.subscribe();
+                            final var message = inMemoryBroker.take();
                             e.getKey()
                                     .invoke(e.getValue(),
                                             objectMapper.readValue(message, e.getKey().getParameterTypes()[0]));
