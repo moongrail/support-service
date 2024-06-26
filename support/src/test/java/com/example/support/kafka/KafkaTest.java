@@ -61,11 +61,6 @@ class KafkaTest {
                 .content(objectMapper.writeValueAsString(request)))
                 .andExpect(status().isCreated());
 
-        Set<SupportPhrase> collect = StreamSupport.stream(consumer.poll(Duration.ofSeconds(3))
-                        .spliterator(), false)
-                .map(ConsumerRecord::value)
-                .collect(Collectors.toUnmodifiableSet());
-
         Assertions.assertTrue(StreamSupport.stream(consumer.poll(Duration.ofSeconds(3))
                         .spliterator(),false)
                 .map(ConsumerRecord::value)
