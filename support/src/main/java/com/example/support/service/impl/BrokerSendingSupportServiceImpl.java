@@ -1,8 +1,9 @@
-package com.example.support.service;
+package com.example.support.service.impl;
 
 import com.example.publisher.Publisher;
 import com.example.support.dto.SupportPhraseRequest;
 import com.example.support.dto.SupportPhraseResponse;
+import com.example.support.service.SupportService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 

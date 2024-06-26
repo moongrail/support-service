@@ -15,14 +15,10 @@ spring:
       value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
       properties:
         spring.json.trusted.packages: '*'
+      group-id: test-group
 
-server:
-  port: 80
-debug: true
-inmemory-broker:
-  enabled: false
 application:
   support-phrase:
     kafka-sending:
       enabled: true
-      topic: dev
+      topic: test

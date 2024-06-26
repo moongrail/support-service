@@ -3,7 +3,7 @@ package com.example.support.config;
 import com.example.broker.InMemoryBroker;
 import com.example.publisher.Publisher;
 import com.example.support.dto.SupportPhraseRequest;
-import com.example.support.service.BrokerSendingSupportServiceImpl;
+import com.example.support.service.impl.BrokerSendingSupportServiceImpl;
 import com.example.support.service.SupportService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
