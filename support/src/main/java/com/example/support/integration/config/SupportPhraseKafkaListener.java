@@ -11,7 +11,7 @@ public class SupportPhraseKafkaListener {
 
     @KafkaListener(
             topics = "${application.support-phrase.kafka-sending.topic}",
-            groupId = "#{T(java.util.UUID).randomUUID().toString()}"
+            groupId = "${spring.kafka.consumer.group-id}"
     )
     public void listen(SupportPhrase supportPhrase){
         phraseRepository.addPhrase(supportPhrase);
